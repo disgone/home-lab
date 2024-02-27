@@ -1,0 +1,16 @@
+apiVersion: v2
+name: nfs-volume
+description: A Helm chart for Kubernetes to provision an NFS-backed PersistentVolume and a PersistentVolumeClaim
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+keywords:
+  - nfs
+  - persistent volume
+  - storage
+
+dependencies: []
+
+annotations:
+  "helm.sh/chart": "nfs-pv-chart"

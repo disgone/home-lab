@@ -1,0 +1,15 @@
+namespace: default
+
+volume:
+  name: "nfs-pv" # The name of the volume.
+  nfs_server: "127.0.0.1" # The IP address of the NFS server, or a DNS name.
+  nfs_path: "/mnt/nfs" # The path to the exported NFS volume.
+  size: "25Gi" # The size of the volume.
+  accessModes:
+    - "ReadWriteMany"
+
+volumeClaim:
+  name: "nfs-pvc" # The name of the volume claim.
+  size: "1Gi" # The size of the volume claim.
+  accessModes:
+    - "ReadWriteMany"

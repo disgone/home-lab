@@ -1,0 +1,21 @@
+{
+    "name": "k8s workspace",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "redhat.vscode-yaml"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
+    "forwardPorts": [3000],
+    "postCreateCommand": "echo 'Environment ready'",
+    "remoteUser": "root",
+    "mounts": [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.kube,target=/root/.kube,type=bind,consistency=cached,readonly"
+    ]        
+}
