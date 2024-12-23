@@ -1,6 +1,6 @@
-# NFS Persitant Volumes
+# NFS Persistent Volumes
 
-Contains Helm charts for creating persitant volumes in a k8s environment using NFS as the store.
+Contains Helm charts for creating persistent volumes in a Kubernetes environment using NFS as the storage backend.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ A NFS share must be created and exported. For example:
 # /etc/exports
 /mnt/nfs_data *(rw,sync,no_subtree_check)
 
-## Aftering updating the exports...
+## After updating the exports...
 systemctl restart nfs-kernel-server
 sudo exportfs -rav
 ```
