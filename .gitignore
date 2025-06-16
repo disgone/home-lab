@@ -1,2 +1,7 @@
 .aider*
 .env
+
+ansible/inventories/*/vault.yml
+ansible/inventories/*/host_vars/
+ansible/secrets/
+ansible/*.retry

@@ -1,0 +1,28 @@
+- name: Update apt packages on supported machines
+  hosts: apt_hosts
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Ensure system is Debian/Ubuntu-based
+      ansible.builtin.assert:
+        that:
+          - ansible_facts['os_family'] == 'Debian'
+        fail_msg: "This playbook only supports Debian/Ubuntu systems."
+
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Autoremove unused packages
+      ansible.builtin.apt:
+        autoremove: yes
+
+    - name: Autoclean package cache
+      ansible.builtin.apt:
+        autoclean: yes
